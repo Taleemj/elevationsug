@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "Elevation Events",
   description:
     "Kampala-based event production and experiential marketing company operating across East Africa.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

@@ -25,47 +25,6 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="relative min-h-[520px] overflow-hidden bg-[#dfe2e6]">
-          <div className="absolute inset-0 bg-[linear-gradient(30deg,transparent_0_47%,rgba(255,255,255,0.72)_47%_50%,transparent_50%_100%),linear-gradient(120deg,transparent_0_44%,rgba(255,255,255,0.62)_44%_48%,transparent_48%_100%),linear-gradient(0deg,rgba(255,255,255,0.35)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.35)_1px,transparent_1px)] bg-[length:520px_520px,620px_620px,58px_58px,58px_58px]" />
-          <div className="absolute left-[58%] top-[44%] flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-[0_12px_40px_rgba(0,0,0,0.18)]">
-            <div className="relative h-10 w-10 rounded-full bg-primary before:absolute before:left-1/2 before:top-[28px] before:h-5 before:w-5 before:-translate-x-1/2 before:rotate-45 before:bg-primary before:content-[''] after:absolute after:left-1/2 after:top-1/2 after:h-3 after:w-3 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-white after:content-['']" />
-          </div>
-          <div className="relative mx-auto flex min-h-[520px] max-w-6xl items-center px-5 py-16 md:px-10">
-            <div className="w-full max-w-sm bg-primary p-8 text-white shadow-[0_28px_70px_rgba(0,0,0,0.18)] md:p-10">
-              <h2 className="text-2xl font-light">Elevation Events Limited</h2>
-              <div className="mt-6 space-y-4 text-sm leading-6">
-                <p>Plot 83, Bukoto Street, Kampala, Uganda</p>
-                <p>
-                  <a href="tel:+256782164714" className="text-white hover:text-white/75">
-                    +256 782 164 714
-                  </a>
-                </p>
-                <p>
-                  <a href="mailto:info@elevationevents.co.ug" className="text-white hover:text-white/75">
-                    info@elevationevents.co.ug
-                  </a>
-                </p>
-                <p>
-                  <a
-                    href="https://www.elevationevents.co.ug"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-white hover:text-white/75"
-                  >
-                    www.elevationevents.co.ug
-                  </a>
-                </p>
-              </div>
-              <Link
-                href="https://maps.google.com/?q=Plot%2083%20Bukoto%20Street%20Kampala%20Uganda"
-                className="mt-8 inline-flex min-h-12 items-center justify-center bg-white px-8 text-sm uppercase tracking-[0.02em] text-[#24242c] transition hover:bg-[#24242c] hover:text-white"
-              >
-                Get Direction
-              </Link>
-            </div>
-          </div>
-        </section>
-
         <section className="bg-white px-5 py-20 md:px-10 md:py-28">
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
@@ -97,7 +56,7 @@ export default function ContactPage() {
                     className="border border-[#d9d9df] bg-white p-4 text-sm text-[#64656d] outline-none focus:border-primary"
                   />
                 </label>
-                <button className="min-h-14 bg-primary px-8 text-sm uppercase tracking-[0.02em] text-white transition hover:bg-[#24242c] md:w-max">
+                <button className="min-h-14 bg-primary px-8 text-sm uppercase tracking-[0.02em] !text-white transition hover:bg-[#24242c] md:w-max">
                   Send Message
                 </button>
               </form>
@@ -116,6 +75,52 @@ export default function ContactPage() {
                 We aim to respond to all enquiries within 24 hours on business days.
               </p>
             </aside>
+          </div>
+        </section>
+
+        <section className="relative min-h-[520px] overflow-hidden bg-[#dfe2e6]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7469453074673!2d32.589945611577356!3d0.3427163996524771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbbae151de3a7%3A0xb691a00fa06cca39!2sAfrica%20Elevation!5e0!3m2!1sen!2sug!4v1778766465477!5m2!1sen!2sug"
+            title="Africa Elevation location map"
+            className="absolute inset-0 h-full w-full border-0"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+          <div className="absolute inset-0 bg-white/15" />
+          <div className="relative mx-auto flex min-h-[520px] max-w-6xl items-center px-5 py-16 md:px-10">
+            <div className="w-full max-w-sm bg-primary p-8 text-white shadow-[0_28px_70px_rgba(0,0,0,0.18)] md:p-10">
+              <h2 className="text-2xl font-light">Elevation Events Limited</h2>
+              <div className="mt-6 space-y-4 text-sm leading-6">
+                <p>Plot 83, Bukoto Street, Kampala, Uganda</p>
+                <p>
+                  <a href="tel:+256782164714" className="text-white hover:text-white/75">
+                    +256 782 164 714
+                  </a>
+                </p>
+                <p>
+                  <a href="mailto:info@elevationevents.co.ug" className="text-white hover:text-white/75">
+                    info@elevationevents.co.ug
+                  </a>
+                </p>
+                <p>
+                  <a
+                    href="https://www.elevationevents.co.ug"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-white hover:text-white/75"
+                  >
+                    www.elevationevents.co.ug
+                  </a>
+                </p>
+              </div>
+              <Link
+                href="https://maps.google.com/?q=Plot%2083%20Bukoto%20Street%20Kampala%20Uganda"
+                className="mt-8 inline-flex min-h-12 items-center justify-center bg-white px-8 text-sm uppercase tracking-[0.02em] !text-[#24242c] transition hover:bg-[#24242c] hover:!text-white"
+              >
+                Get Direction
+              </Link>
+            </div>
           </div>
         </section>
       </main>

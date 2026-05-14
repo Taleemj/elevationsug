@@ -28,7 +28,7 @@ export function SiteFooter() {
             <Link
               key={item}
               href="#"
-              className="flex h-11 w-11 items-center justify-center bg-white text-xs font-semibold uppercase text-[#292936] transition hover:bg-primary hover:text-white"
+              className="flex h-11 w-11 items-center justify-center bg-white text-xs font-semibold uppercase text-[#292936] transition hover:bg-primary hover:!text-white"
             >
               {item}
             </Link>

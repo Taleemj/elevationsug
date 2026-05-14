@@ -41,7 +41,7 @@ export function AboutSection() {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex min-h-12 items-center justify-center bg-primary px-8 text-sm uppercase tracking-[0.02em] text-white transition hover:-translate-y-0.5 hover:bg-[#e64f00]"
+              className="inline-flex min-h-12 items-center justify-center bg-primary px-8 text-sm uppercase tracking-[0.02em] !text-white transition hover:-translate-y-0.5 hover:bg-[#e64f00]"
             >
               Work With Us
             </Link>

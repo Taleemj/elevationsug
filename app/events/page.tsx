@@ -72,7 +72,7 @@ export default function EventsPage() {
             {events.map((event, index) => (
               <article
                 key={event.title}
-                className="grid overflow-hidden border border-[#e5e5e8] bg-white shadow-sm md:grid-cols-[0.42fr_0.58fr]"
+                className="grid cursor-pointer overflow-hidden border border-[#e5e5e8] bg-white shadow-sm md:grid-cols-[0.42fr_0.58fr]"
               >
                 <div className="relative min-h-[280px]">
                   <Image
@@ -100,12 +100,11 @@ export default function EventsPage() {
                       </span>
                     ))}
                   </div>
-                  <Link
-                    href={event.href}
-                    className="mt-8 inline-flex min-h-12 items-center justify-center bg-primary px-7 text-sm uppercase tracking-[0.02em] text-white transition hover:bg-[#24242c]"
+                  <div
+                    className="mt-8 inline-flex min-h-12 items-center justify-center bg-primary px-7 text-sm uppercase tracking-[0.02em] !text-white transition hover:bg-[#24242c]"
                   >
                     Learn More
-                  </Link>
+                  </div>
                 </div>
               </article>
             ))}

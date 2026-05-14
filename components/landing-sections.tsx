@@ -145,7 +145,7 @@ function ServicesSection() {
       <SectionHeading
         title="What We"
         accent="Deliver"
-        description="Our landing page keeps the clean conference rhythm from the reference, but the content is grounded in Elevation Events' real portfolio across consumer, corporate, government and industry work."
+        description="We produce events that bring people, institutions and brands together with clear purpose: stronger communities, better conversations, visible partners and memorable guest experiences."
       />
 
       <div className="mx-auto mt-14 grid max-w-6xl gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -195,7 +195,7 @@ function NumbersAndRegisterSection() {
             accent="Brief"
             align="left"
             tone="dark"
-            description="Looking to sponsor, exhibit, launch, host or produce an event? Share the essentials and the team can shape the right route."
+            description="Looking to sponsor, exhibit, launch, host or produce an event? Share the essentials and our team will help shape the right event plan."
           />
           <form className="mt-8 grid gap-5 sm:grid-cols-2">
             <input
@@ -228,7 +228,7 @@ function NumbersAndRegisterSection() {
               <option className="text-[#24242c]">Exhibition</option>
               <option className="text-[#24242c]">Managed Event</option>
             </select>
-            <button className="h-14 bg-white px-8 text-sm uppercase tracking-[0.02em] text-[#24242c] transition hover:bg-primary hover:text-white sm:w-max">
+            <button className="h-14 bg-white px-8 text-sm uppercase tracking-[0.02em] text-[#24242c] transition hover:bg-primary hover:!text-white sm:w-max">
               Send Enquiry
             </button>
           </form>
@@ -244,15 +244,14 @@ function EventsSection() {
       <SectionHeading
         title="Our"
         accent="Events"
-        description="A focused selection from the Elevation Events portfolio, spanning lifestyle audiences, industry stakeholders and public-facing policy conversations."
+        description="From Kampala lifestyle audiences to national industry stakeholders and public policy conversations, our event properties are built for real participation and lasting value."
       />
 
       <div className="mx-auto mt-14 grid max-w-6xl gap-7 md:grid-cols-2 xl:grid-cols-4">
         {events.map((event) => (
-          <Link
+          <div
             key={event.title}
-            href={event.href}
-            className="group border border-[#e5e5e8] bg-white transition hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(0,0,0,0.1)]"
+            className="group cursor-pointer border border-[#e5e5e8] bg-white transition hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(0,0,0,0.1)]"
           >
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
@@ -271,7 +270,7 @@ function EventsSection() {
                 Learn More
               </p>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </section>
@@ -286,7 +285,7 @@ function SponsorSection() {
       <SectionHeading
         title="Our"
         accent="Partners"
-        description="We collaborate with institutions, venues, media platforms and brands to deliver stronger public experiences across Uganda and East Africa."
+        description="We work with institutions, venues, media platforms and brands that want credible visibility, engaged audiences and well-produced public experiences."
       />
       <div className="mx-auto mt-14 grid max-w-5xl grid-cols-2 gap-5 md:grid-cols-3">
         {sponsors.map((sponsor) => (
@@ -301,7 +300,7 @@ function SponsorSection() {
       <div className="mt-12 text-center">
         <Link
           href="/contact"
-          className="inline-flex min-h-12 items-center justify-center bg-primary px-8 text-sm uppercase tracking-[0.02em] text-white transition hover:-translate-y-0.5 hover:bg-[#e64f00]"
+          className="inline-flex min-h-12 items-center justify-center bg-primary px-8 text-sm uppercase tracking-[0.02em] !text-white transition hover:-translate-y-0.5 hover:bg-[#e64f00]"
         >
           Become a Partner
         </Link>
@@ -316,15 +315,14 @@ function NewsSection() {
       <SectionHeading
         title="Elevation"
         accent="News"
-        description="Updates and insights from the events, corporate engagement and public sector spaces we work in."
+        description="Updates, ideas and industry notes from the events, corporate engagement and public sector spaces we work in."
       />
 
       <div className="mx-auto mt-14 grid max-w-6xl gap-7 md:grid-cols-3">
         {news.map((item) => (
-          <Link
+          <div
             key={item.title}
-            href={item.href}
-            className="group border border-[#e5e5e8] bg-white"
+            className="group cursor-pointer border border-[#e5e5e8] bg-white"
           >
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
@@ -344,7 +342,7 @@ function NewsSection() {
                 Read More
               </p>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </section>
@@ -370,7 +368,7 @@ function NewsletterSection() {
             placeholder="Email"
             type="email"
           />
-          <button className="h-14 bg-primary px-10 text-sm uppercase tracking-[0.02em] text-white transition hover:bg-[#e64f00]">
+          <button className="h-14 bg-primary px-10 text-sm uppercase tracking-[0.02em] !text-white transition hover:bg-[#e64f00]">
             Subscribe
           </button>
         </form>
@@ -382,12 +380,15 @@ function NewsletterSection() {
 function ContactMapSection() {
   return (
     <section className="relative min-h-[520px] overflow-hidden bg-[#dfe2e6]">
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(30deg,transparent_0_47%,rgba(255,255,255,0.72)_47%_50%,transparent_50%_100%),linear-gradient(120deg,transparent_0_44%,rgba(255,255,255,0.62)_44%_48%,transparent_48%_100%),linear-gradient(0deg,rgba(255,255,255,0.35)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.35)_1px,transparent_1px)] bg-[length:520px_520px,620px_620px,58px_58px,58px_58px]" />
-        <div className="absolute left-[56%] top-[42%] flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-[0_12px_40px_rgba(0,0,0,0.18)]">
-          <div className="relative h-10 w-10 rounded-full bg-primary before:absolute before:left-1/2 before:top-[28px] before:h-5 before:w-5 before:-translate-x-1/2 before:rotate-45 before:bg-primary before:content-[''] after:absolute after:left-1/2 after:top-1/2 after:h-3 after:w-3 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-white after:content-['']" />
-        </div>
-      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7469453074673!2d32.589945611577356!3d0.3427163996524771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbbae151de3a7%3A0xb691a00fa06cca39!2sAfrica%20Elevation!5e0!3m2!1sen!2sug!4v1778766465477!5m2!1sen!2sug"
+        title="Africa Elevation location map"
+        className="absolute inset-0 h-full w-full border-0"
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+      <div className="absolute inset-0 bg-white/15" />
 
       <div className="relative mx-auto flex min-h-[520px] max-w-6xl items-center px-5 py-16 md:px-10">
         <div className="w-full max-w-sm bg-primary p-8 text-white shadow-[0_28px_70px_rgba(0,0,0,0.18)] md:p-10">
@@ -410,7 +411,7 @@ function ContactMapSection() {
           </div>
           <Link
             href="/contact"
-            className="mt-8 inline-flex min-h-12 items-center justify-center bg-white px-8 text-sm uppercase tracking-[0.02em] text-[#24242c] transition hover:bg-[#24242c] hover:text-white"
+            className="mt-8 inline-flex min-h-12 items-center justify-center bg-white px-8 text-sm uppercase tracking-[0.02em] !text-[#24242c] transition hover:bg-[#24242c] hover:!text-white"
           >
             Get Direction
           </Link>

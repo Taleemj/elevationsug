@@ -52,7 +52,9 @@ export default function AboutPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#211529]/70 to-transparent" />
               <div className="absolute bottom-6 left-6 bg-primary px-6 py-4 text-white">
                 <p className="text-3xl font-light">5+</p>
-                <p className="text-xs uppercase tracking-[0.08em]">Years producing events</p>
+                <p className="text-xs uppercase tracking-[0.08em]">
+                  Years producing events
+                </p>
               </div>
             </div>
 
@@ -60,10 +62,10 @@ export default function AboutPage() {
               <SectionTitle title="Our" accent="Story" align="left" />
               <div className="mt-8 space-y-5 text-base leading-8 text-[#64656d]">
                 <p>
-                  Elevation Events Limited was established with a conviction that
-                  Uganda deserved better events: not just better organised events,
-                  but experiences with purpose behind them and real value for the
-                  people in the room.
+                  Elevation Events Limited was established with a conviction
+                  that Uganda deserved better events: not just better organised
+                  events, but experiences with purpose behind them and real
+                  value for the people in the room.
                 </p>
                 <p>
                   We started with consumer events for Kampala's growing urban
@@ -72,8 +74,8 @@ export default function AboutPage() {
                   we work.
                 </p>
                 <p>
-                  We can produce a food and culture festival for thousands on one
-                  hand, and a national industry expo hosted by government
+                  We can produce a food and culture festival for thousands on
+                  one hand, and a national industry expo hosted by government
                   ministries on the other. That range is intentional.
                 </p>
               </div>
@@ -89,9 +91,16 @@ export default function AboutPage() {
           />
           <div className="mx-auto mt-14 grid max-w-6xl gap-6 md:grid-cols-2">
             {approach.map((item) => (
-              <article key={item.title} className="border-l-4 border-primary bg-white p-7 shadow-sm">
-                <h3 className="text-xl font-semibold text-[#24242c]">{item.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-[#696a72]">{item.description}</p>
+              <article
+                key={item.title}
+                className="border-l-4 border-primary bg-white p-7 shadow-sm"
+              >
+                <h3 className="text-xl font-semibold text-[#24242c]">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-[#696a72]">
+                  {item.description}
+                </p>
               </article>
             ))}
           </div>
@@ -152,9 +161,15 @@ function PageHero({
         sizes="100vw"
       />
       <div className="relative mx-auto max-w-5xl text-center">
-        <p className="text-sm uppercase tracking-[0.16em] text-primary">{eyebrow}</p>
-        <h1 className="mt-5 text-4xl font-light uppercase leading-tight md:text-6xl">{title}</h1>
-        <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-white/75">{description}</p>
+        <p className="text-sm uppercase tracking-[0.16em] text-primary">
+          {eyebrow}
+        </p>
+        <h1 className="mt-5 text-4xl font-light uppercase leading-tight md:text-6xl">
+          {title}
+        </h1>
+        <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-white/75">
+          {description}
+        </p>
       </div>
     </section>
   );
@@ -172,12 +187,22 @@ function SectionTitle({
   align?: "center" | "left";
 }) {
   return (
-    <div className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
+    <div
+      className={
+        align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"
+      }
+    >
       <h2 className="text-3xl font-semibold text-[#24242c] md:text-4xl">
         {title} <span className="font-light italic text-primary">{accent}</span>
       </h2>
-      <div className={`mt-4 h-0.5 w-14 bg-primary ${align === "center" ? "mx-auto" : ""}`} />
-      {description && <p className="mt-6 text-sm leading-7 text-[#77787f] md:text-base">{description}</p>}
+      <div
+        className={`mt-4 h-0.5 w-14 bg-primary ${align === "center" ? "mx-auto" : ""}`}
+      />
+      {description && (
+        <p className="mt-6 text-sm leading-7 text-[#77787f] md:text-base">
+          {description}
+        </p>
+      )}
     </div>
   );
 }
@@ -185,7 +210,9 @@ function SectionTitle({
 function InfoPanel({ label, text }: { label: string; text: string }) {
   return (
     <article className="border border-[#e7e7ea] bg-white p-7 shadow-sm">
-      <p className="text-sm uppercase tracking-[0.12em] text-primary">{label}</p>
+      <p className="text-sm uppercase tracking-[0.12em] text-primary">
+        {label}
+      </p>
       <p className="mt-4 text-base leading-8 text-[#64656d]">{text}</p>
     </article>
   );
@@ -196,11 +223,12 @@ function CTASection() {
     <section className="bg-primary px-5 py-16 text-center text-white md:px-10">
       <h2 className="text-3xl font-light md:text-4xl">Let's work together</h2>
       <p className="mx-auto mt-4 max-w-2xl text-white/85">
-        Tell us what you need to achieve and we will tell you how we can make it happen.
+        Tell us what you need to achieve and we will tell you how we can make it
+        happen.
       </p>
       <Link
         href="/contact"
-        className="mt-8 inline-flex min-h-12 items-center justify-center bg-white px-8 text-sm uppercase tracking-[0.02em] text-[#24242c] transition hover:bg-[#24242c] hover:text-white"
+        className="mt-8 inline-flex min-h-12 items-center justify-center bg-white px-8 text-sm uppercase tracking-[0.02em] !text-[#24242c] transition hover:bg-[#24242c] hover:text-white"
       >
         Get in Touch
       </Link>

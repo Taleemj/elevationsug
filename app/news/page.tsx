@@ -56,10 +56,9 @@ export default function NewsPage() {
 
           <div className="mx-auto mt-14 grid max-w-6xl gap-7 md:grid-cols-3">
             {articles.map((article) => (
-              <Link
+              <div
                 key={article.title}
-                href={article.href}
-                className="group border border-[#e5e5e8] bg-white transition hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(0,0,0,0.1)]"
+                className="group cursor-pointer border border-[#e5e5e8] bg-white transition hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(0,0,0,0.1)]"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
@@ -80,7 +79,7 @@ export default function NewsPage() {
                     Read More
                   </p>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </section>
@@ -94,7 +93,7 @@ export default function NewsPage() {
           </p>
           <Link
             href="/subscribe"
-            className="mt-8 inline-flex min-h-12 items-center justify-center bg-primary px-8 text-sm uppercase tracking-[0.02em] text-white transition hover:bg-white hover:text-[#24242c]"
+            className="mt-8 inline-flex min-h-12 items-center justify-center bg-primary px-8 text-sm uppercase tracking-[0.02em] !text-white transition hover:bg-white hover:!text-[#24242c]"
           >
             Subscribe Now
           </Link>

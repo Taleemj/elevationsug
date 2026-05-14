@@ -44,7 +44,7 @@ export function SiteHeader() {
             key={item.href}
           >
             <Link
-              className={`transition hover:-translate-y-px hover:text-primary ${
+              className={`transition-colors hover:text-primary ${
                 index === 0 ? "text-primary" : ""
               }`}
               href={item.href}
@@ -58,7 +58,7 @@ export function SiteHeader() {
 
       <Link
         href="/contact"
-        className="hidden items-center justify-center gap-6 bg-primary px-8 text-[clamp(0.95rem,1.2vw,1.25rem)] uppercase tracking-[0.02em] text-white md:flex md:min-w-[162px]"
+        className="hidden items-center justify-center gap-6 bg-primary px-8 text-[clamp(0.95rem,1.2vw,1.25rem)] uppercase tracking-[0.02em] !text-white md:flex md:min-w-[162px]"
       >
         <span
           className="hidden h-10 items-center border-r border-white/40 pr-6 xl:flex"
@@ -100,7 +100,7 @@ export function SiteHeader() {
           </Link>
         ))}
         <Link
-          className="mt-4 bg-primary px-5 py-4 text-center uppercase text-white"
+          className="mt-4 bg-primary px-5 py-4 text-center uppercase !text-white"
           href="/contact"
           onClick={() => setIsOpen(false)}
         >
