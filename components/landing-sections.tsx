@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { SiteFooter } from "./site-footer";
 
 const services = [
@@ -167,6 +170,51 @@ function ServicesSection() {
 }
 
 function NumbersAndRegisterSection() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    enquiry: "Sponsorship",
+  });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
+    "idle"
+  );
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          enquiry: "Sponsorship",
+        });
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
   return (
     <section className="grid md:grid-cols-2">
       <div className="relative bg-primary px-5 py-20 text-white md:px-10 lg:px-16">
@@ -197,39 +245,66 @@ function NumbersAndRegisterSection() {
             tone="dark"
             description="Looking to sponsor, exhibit, launch, host or produce an event? Share the essentials and our team will help shape the right event plan."
           />
-          <form className="mt-8 grid gap-5 sm:grid-cols-2">
+          <form className="mt-8 grid gap-5 sm:grid-cols-2" onSubmit={handleSubmit}>
             <input
+              id="name"
+              required
+              value={formData.name}
+              onChange={handleChange}
               aria-label="Your name"
               className="h-14 border border-white/35 bg-transparent px-5 text-sm text-white outline-none placeholder:text-white/70 focus:border-primary"
               placeholder="Your Name"
               type="text"
             />
             <input
+              id="email"
+              required
+              value={formData.email}
+              onChange={handleChange}
               aria-label="Email"
               className="h-14 border border-white/35 bg-transparent px-5 text-sm text-white outline-none placeholder:text-white/70 focus:border-primary"
               placeholder="Email"
               type="email"
             />
             <input
+              id="phone"
+              value={formData.phone}
+              onChange={handleChange}
               aria-label="Phone"
               className="h-14 border border-white/35 bg-transparent px-5 text-sm text-white outline-none placeholder:text-white/70 focus:border-primary"
               placeholder="Phone"
               type="tel"
             />
             <select
+              id="enquiry"
+              required
+              value={formData.enquiry}
+              onChange={handleChange}
               aria-label="Enquiry type"
               className="h-14 border border-white/35 bg-transparent px-5 text-sm text-white outline-none focus:border-primary"
-              defaultValue=""
             >
-              <option value="" disabled className="text-[#24242c]">
-                Enquiry Type
-              </option>
-              <option className="text-[#24242c]">Sponsorship</option>
-              <option className="text-[#24242c]">Exhibition</option>
-              <option className="text-[#24242c]">Managed Event</option>
+              <option value="Sponsorship" className="text-[#24242c]">Sponsorship</option>
+              <option value="Exhibition" className="text-[#24242c]">Exhibition</option>
+              <option value="Managed Event" className="text-[#24242c]">Managed Event</option>
             </select>
-            <button className="h-14 bg-white px-8 text-sm uppercase tracking-[0.02em] text-[#24242c] transition hover:bg-primary hover:!text-white sm:w-max">
-              Send Enquiry
+
+            {status === "success" && (
+              <p className="col-span-full text-sm font-medium text-green-400">
+                Enquiry sent successfully! We'll contact you soon.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="col-span-full text-sm font-medium text-red-400">
+                Failed to send enquiry. Please try again.
+              </p>
+            )}
+
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="h-14 bg-white px-8 text-sm uppercase tracking-[0.02em] text-[#24242c] transition hover:bg-primary hover:!text-white disabled:opacity-50 sm:w-max"
+            >
+              {status === "loading" ? "Sending..." : "Send Enquiry"}
             </button>
           </form>
         </div>
@@ -379,7 +454,7 @@ function NewsletterSection() {
 
 function ContactMapSection() {
   return (
-    <section className="relative min-h-[520px] overflow-hidden bg-[#dfe2e6]">
+    <section className="relative min-h-[680px] overflow-hidden bg-[#dfe2e6] md:min-h-[520px]">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7469453074673!2d32.589945611577356!3d0.3427163996524771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbbae151de3a7%3A0xb691a00fa06cca39!2sAfrica%20Elevation!5e0!3m2!1sen!2sug!4v1778766465477!5m2!1sen!2sug"
         title="Africa Elevation location map"
@@ -388,30 +463,28 @@ function ContactMapSection() {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       />
-      <div className="absolute inset-0 bg-white/15" />
+      <div className="pointer-events-none absolute inset-0 bg-white/15" />
 
-      <div className="relative mx-auto flex min-h-[520px] max-w-6xl items-center px-5 py-16 md:px-10">
-        <div className="w-full max-w-sm bg-primary p-8 text-white shadow-[0_28px_70px_rgba(0,0,0,0.18)] md:p-10">
-          <h2 className="text-2xl font-light">Elevation Events Limited</h2>
-          <div className="mt-6 space-y-4 text-sm leading-6">
+      <div className="pointer-events-none relative mx-auto flex min-h-[680px] max-w-6xl items-end px-5 pb-8 md:min-h-[520px] md:items-center md:px-10 md:py-16">
+        <div className="pointer-events-auto w-full max-w-sm bg-primary p-6 text-white shadow-[0_28px_70px_rgba(0,0,0,0.18)] md:p-10">
+          <h2 className="text-xl font-light md:text-2xl">Elevation Events Limited</h2>
+          <div className="mt-4 space-y-3 text-sm leading-relaxed md:mt-6 md:space-y-4 md:leading-6">
             <p>Plot 83, Bukoto Street, Kampala, Uganda</p>
-            <p>
+            <div className="flex flex-col gap-2 md:block md:space-y-4">
               <a href="tel:+256782164714" className="text-white hover:text-white/75">
                 +256 782 164 714
               </a>
-            </p>
-            <p>
               <a
                 href="mailto:info@elevationevents.co.ug"
                 className="text-white hover:text-white/75"
               >
                 info@elevationevents.co.ug
               </a>
-            </p>
+            </div>
           </div>
           <Link
             href="/contact"
-            className="mt-8 inline-flex min-h-12 items-center justify-center bg-white px-8 text-sm uppercase tracking-[0.02em] !text-[#24242c] transition hover:bg-[#24242c] hover:!text-white"
+            className="mt-6 inline-flex min-h-11 items-center justify-center bg-white px-6 text-xs uppercase tracking-[0.02em] !text-[#24242c] transition hover:bg-[#24242c] hover:!text-white md:mt-8 md:min-h-12 md:px-8 md:text-sm"
           >
             Get Direction
           </Link>
